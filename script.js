@@ -28,36 +28,10 @@ const renderCountry = function (data, i, className = '') {
     flag.style.backgroundRepeat = 'no-repeat';
 }
 
-
-const getCountryNeighbour = function (country,i) {
-    const request = new XMLHttpRequest();
-    request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
-    request.send();
-
-    request.addEventListener('load', function () {
-        const [data] = JSON.parse(this.responseText);
-        console.log(data)
-
-        // render the country
-        renderCountry(data, '1');
-
-        // render the neibhgour country
-        const [neighbour] = data.borders;
-
-        if(!neighbour) return;
-
-        const request = new XMLHttpRequest();
-        request.open('GET', `https://restcountries.com/v3.1/alpha/${neighbour}`);
-        request.send();
-
-        request.addEventListener('load', function () {
-            const data2 = JSON.parse(this.responseText);
-            console.log(data2)
-
-            renderCountry(data2[0], '2', 'neighbour');
-        })
-    });
-        
+const getCountryData = country => {
+    fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0], '1'));
 }
 
-getCountryNeighbour('mexico');
+getCountryData('india');
