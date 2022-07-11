@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    /* height: 100vh; */
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 7rem;
+    /* width: 50%; */
+    /* max-width: 80%; */
+    /* margin: auto; */
+}
+
+.countries {
+    width: 19rem;
+    height: 26rem;
+    background-color: white;
+    box-shadow: 3px 3px 30px 2px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.country-flag {
+    background-color: black;
+    /* background: url(/instagram.png); */
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-basis: 40%;
+}
+
+.country-info {
+    padding: 1rem 2rem;
+}
+
+.country-info h2 {
+    color: rgba(24, 23, 23, 0.819);
+    font-size: 25px;
+}
+
+.country-info p {
+    color: rgba(37, 36, 36, 0.456);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.country-info ul {
+    margin-top: 20px;
+}
+
+
+.country-info ul li {
+    list-style: none;
+    padding: 7px 0;
+}
+
+.country-info ul li span {
+    font-weight: 600;
+    font-size: 15px;
+    color: rgba(45, 43, 43, 0.722);
+    letter-spacing: 1px;
+}
+
+/* .country-flag img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+/* .container {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 5px solid black;
+    border-bottom: 5px solid white;
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(360deg);
+    }
+} */
