@@ -44,6 +44,7 @@ const getCountryData = country => {
     })
     .then(response => response.json())
     .then(data2 => renderCountry(data2[0],'2','neighbour'))
+    .catch( err => alert(err));
 }
 
 getCountryData('india');
