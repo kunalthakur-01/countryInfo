@@ -20,6 +20,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 7rem;
+    align-items: center;
+    justify-items: center;
+    position: relative;
     /* width: 50%; */
     /* max-width: 80%; */
     /* margin: auto; */
@@ -27,7 +30,7 @@ body {
 
 .countries {
     width: 19rem;
-    height: 26rem;
+    height: 28rem;
     background-color: white;
     box-shadow: 3px 3px 30px 2px rgba(0,0,0,0.2);
     display: flex;
@@ -37,19 +40,54 @@ body {
 .country-flag {
     background-color: black;
     /* background: url(/instagram.png); */
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-origin: content-box;
     flex-basis: 40%;
 }
 
+.neighbour {
+    width: 17rem;
+    height: 22rem;
+}
+
+.neighbour::before {
+    content: 'Neighbour country';
+    position: absolute;
+    top: 5px;
+    right: 4rem;
+    color: rgba(50, 49, 49, 0.722);
+    font-size: 17px;
+    text-decoration: underline;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px 1px rgba(0,0,0,0.8);
+}
+
+.neighbour .country-info {
+    margin-top: 0;
+    padding: 1rem 2rem 0;
+}
+
+.neighbour .country-info h2 {
+    font-size: 20px;
+}
+
+.neighbour .country-info ul li span {
+    font-size: 13px;
+    letter-spacing: 0px;
+}
+
+
 .country-info {
-    padding: 1rem 2rem;
+    padding: 0 2rem;
+    margin-top: 2.5rem;
 }
 
 .country-info h2 {
     color: rgba(24, 23, 23, 0.819);
-    font-size: 25px;
+    font-size: 27px;
 }
 
 .country-info p {
