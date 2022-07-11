@@ -31,7 +31,19 @@ const renderCountry = function (data, i, className = '') {
 const getCountryData = country => {
     fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(response => response.json())
-    .then(data => renderCountry(data[0], '1'));
+    .then(data => {
+        // country 1
+        renderCountry(data[0], '1');
+
+        // neighbour country
+        const neighbour = data[0].borders[0];
+
+        if(!neighbour) return;
+
+        return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+    })
+    .then(response => response.json())
+    .then(data2 => renderCountry(data2[0],'2','neighbour'))
 }
 
 getCountryData('india');
