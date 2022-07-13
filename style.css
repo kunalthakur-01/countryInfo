@@ -8,6 +8,7 @@
 
 body {
     width: 100%;
+    /* height: 200vh; */
     position: relative;
     font-family: 'Roboto Slab', serif;
     display: flex;
@@ -21,9 +22,7 @@ body {
     column-gap: 7rem;
     align-items: center;
     position: relative;
-    /* width: 50%; */
-    /* max-width: 80%; */
-    /* margin: auto; */
+    transition: 2s;
 }
 
 .countries {
@@ -117,6 +116,154 @@ body {
     color: rgba(45, 43, 43, 0.722);
     letter-spacing: 1px;
 }
+
+.getCountry {
+    margin: 2rem;
+}
+
+.getCountry form {
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    /* width: auto; */
+}
+
+.getCountry form input {
+    padding: 6px 10px;
+    /* width: 15rem; */
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.getCountry form button {
+    padding: 4px 5px;
+    width: 5rem;
+    font-size: 16px;
+    background-color: aqua;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    /* border: none; */
+}
+
+.getCountry form button:active {
+    opacity: 0.3;
+}
+
+.hidden {
+    display: none;
+}
+
+.backButton {
+    position: absolute;
+    top: 1.7rem;
+    left: 3rem;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.backButton:active {
+    border: 2px solid black;
+}
+
+
+@media screen and (max-width: 700px) {
+    .container {
+        column-gap: 2rem;
+    }
+
+    .countries {
+        width: 17rem;
+        height: 26rem;
+    }
+
+    .neighbour {
+        width: 15rem;
+        height: 20rem;
+    }
+
+    .backButton {
+        font-size: 40px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 7rem;
+        align-items: center;
+        justify-items: center;
+        position: relative;
+        margin: 5rem 0 2rem;
+    }
+    
+    .countries {
+        width: 18rem;
+        height: 27rem;
+    }
+
+    .neighbour {
+        width: 16rem;
+        height: 21rem;
+    }
+
+    .backButton {
+        top: 1rem;
+        left:1rem;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .neighbour::before {
+        top: 32rem;
+        right: 4.2rem;
+        font-size: 17px;
+    }
+
+    .getCountry h1 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .countries {
+        width: 17rem;
+        height: 26rem;
+    }
+
+    .neighbour {
+        width: 15rem;
+        height: 20rem;
+    }
+
+    .neighbour::before {
+        top: 31rem;
+        right: 3rem;
+        font-size: 17px;
+    }
+
+    .getCountry h1 {
+        font-size: 18px;
+    }
+
+    .country-info h2 {
+        font-size: 19px;
+    }
+
+    .neighbour .country-info h2 {
+        font-size: 18px;
+    }
+
+    .container .errorHandler.neighbour-error {
+        grid-column: 1 /span 2;
+        margin-left: -3rem;
+    }
+}
+
+
+
 
 /* .country-flag img {
     width: 100%;

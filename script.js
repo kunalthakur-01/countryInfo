@@ -1,7 +1,9 @@
 'use strict';
 
 const container = document.querySelector('.container');
-
+const form = document.querySelector('.formHandler');
+const getCountry = document.querySelector('.getCountry');
+const backButton = document.querySelector('.backButton');
 
 // error message
 const renderError = (msg, className = '') => {
@@ -114,4 +116,33 @@ const getCountryData = country => {
 }
 
 
-getCountryData('africa');
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // hidden the form section
+    getCountry.classList.add('hidden');
+
+    // display the container section
+    container.classList.remove('hidden');
+
+    // display the back button
+    backButton.classList.remove('hidden');
+
+    // display the countries in the container section
+    getCountryData(e.target[0].value);
+
+    e.target[0].value = '';
+});
+
+backButton.addEventListener('click', () => {
+
+    setTimeout(() => {
+        getCountry.classList.remove('hidden');
+    }, 1000);
+
+    container.innerHTML = '';
+    container.classList.add('hidden');
+
+    backButton.classList.add('hidden');
+
+})
