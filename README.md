@@ -1,2 +1,2 @@
 # countriesInfo
-Here you get the information about a country like population, language, currency and also neighbouring country
+Search any country of your choice and get current info of that country. Here, you will see the flag of the searched country, population, languages, etc of a country which would you like to explore and also you will check the neighbour country of a searched country.
