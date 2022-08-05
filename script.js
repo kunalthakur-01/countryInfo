@@ -94,16 +94,21 @@ const getJSON = (url, errorMsg = 'Something Went Wrong!!') => {
 
 // get the country data
 const getCountryData = country => {
+    let i = 0;
+
+    if(country === 'india' || country === 'India' || country === 'INDIA'){
+        i = 1;
+    }
 
     getJSON(`https://restcountries.com/v3.1/name/${country}`, 'Country Not Found ')
         .then(data => {
             // country 1
-            renderCountry(data[0], '1');
+            renderCountry(data[i], '1');
 
-            if (!data[0].borders) throw new Error('No Neighbour Found');
+            if (!data[i].borders) throw new Error('No Neighbour Found');
             
             // neighbour country
-            const neighbour = data[0].borders[0];
+            const neighbour = data[i].borders[0];
 
 
             return getJSON(`https://restcountries.com/v3.1/alpha/${neighbour}`, 'Country Not Found')
